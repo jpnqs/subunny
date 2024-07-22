@@ -14,12 +14,16 @@ const messages = [
 supporterTexture.addEventListener('click', () => {
     vibrate();
     showSpeechBubble();
+    call_confetti();
+
     console.log('Thanks for supporting us!');
 });
 
 supporter.addEventListener('click', () => {
     vibrate();
     showSpeechBubble();
+    call_confetti();
+
     console.log('Thanks for supporting us!');
 });
 
@@ -44,7 +48,6 @@ supporterTexture.addEventListener('touchend', () => {
 supporter.addEventListener('touchend', () => {
     setTimeout(() => {
         supporterTexture.src='src/bunny_open_eyes.png';
-        call_confetti();
 
     }, 500);
 });
@@ -120,6 +123,7 @@ function call_confetti_klee() {
         startVelocity: 30,
         particleCount: 50,
         scalar: 15,
+        zIndex: 1000,
         "fullScreen": {
             "zIndex": 1
           },
