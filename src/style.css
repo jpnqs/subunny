@@ -4,7 +4,21 @@ html, body {
     width: 100%;
     padding: 0px;
     margin: 0px;
+    overflow: hidden;
 }
+
+* {
+    touch-action: manipulation;
+
+}
+
+/** no double tab zoom **/
+@viewport {
+    zoom: 1.0;
+}
+
+/* no image drag */
+
 
 .app {
     display:flex;
@@ -37,12 +51,168 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 100%;
+    height: 100%;
     /* height:; */
     /* background-color: #fff; */
 }
 
 .supporter {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 200%;
+    height: 40rem;
+    z-index: 99;
+}
+
+/* no image drag */
+img {
+    pointer-events: none;
+    
+}
+
+/* text not selectable */
+:root {
+    user-select: none;
+}
+
+.speech-bubble {
+    opacity: 0;
+    z-index: 100;
+    position: absolute;
+    width: 80vw;
+    left: 10vw;
+    right: 10vw;
+    background: #f9f9f9;
+    top: 6rem;
+    border-radius: .4em;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    /* no pointer events */
+    pointer-events: none;
+    font-size: 34pt;
+    text-align: center;
+    font-family: "Patrick Hand", cursive;
+    font-weight: 400;
+    font-style: normal;
+  
+
+}
+
+.active {
+    opacity: 1;
+    top: 2rem;
+}
+
+
+.sun { 
+    animation-duration: 1s;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin: auto;  
+    width:140px;
+    height:140px;
+    border-radius:50%;	
+    background:rgba(0, 0, 0, 0.);
+    opacity:1;			
+    /* opacity: 0; */
+    box-shadow: 0px 0px 80px 30px white;  
+}
+
+.ray_box {
+    position: absolute;
+    margin: auto;
+    top:0px;
+    left:0;
+    right:0;
+    bottom:0;	
+    width:140px;  
+    -webkit-animation: ray_anim 120s linear infinite;
+    animation: ray_anim 120s linear infinite;
+}
+.ray {  
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%); 
+    margin-left:20px;
+    border-radius:80% 80% 0 0;
+    position:absolute;
+    opacity:0.1;
+}
+
+.ray1 {    
+    height:740px;  /* double the original height */
+    width:120px;   /* double the original width */
+    -webkit-transform: rotate(180deg);
+    top:-700px;
+    left: 60px;
+}
+.ray2 {
+    height:400px;
+    width:32px;
+    -webkit-transform: rotate(220deg);
+    top:-360px;
+    left: 300px;
+}
+.ray3 {
+    height:680px;
+    width:200px;
+    -webkit-transform: rotate(250deg);
+    top:-320px;
+    left: 400px;
+}
+.ray4 {
+    height:480px;
+    width:56px;
+    -webkit-transform: rotate(305deg);
+    top:120px;
+    left: 400px;
+}
+.ray5 {
+    height:560px;
+    width:120px;
+    -webkit-transform: rotate(-15deg);
+    top:240px;
+    left: 160px;
+}
+.ray6 {
+    height:360px;
+    width:200px;
+    -webkit-transform: rotate(30deg);
+    top:240px;
+    left: -160px;
+}
+.ray7 {
+    height:720px;
+    width:40px;
+    -webkit-transform: rotate(70deg);
+    top:-140px;
+    left: -160px;
+}
+.ray8 {
+    height:480px;
+    width:120px;
+    -webkit-transform: rotate(100deg);
+    top:-180px;
+    left:-360px;
+}
+.ray9 {
+    height:320px;
+    width:40px;
+    -webkit-transform: rotate(120deg);
+    top:-260px;
+    left:-240px;
+}
+.ray10 {
+    height:760px;
+    width:92px;
+    -webkit-transform: rotate(150deg);
+    top:-740px;
+    left: -240px;
+}
+
+@-webkit-keyframes ray_anim { 
+    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg);}    
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg);}
 }
