@@ -11,10 +11,24 @@ const messages = [
     "Die Quokka Dreams GmbH ist da!"
 ];
 
+supporterTexture.addEventListener('click', () => {
+    vibrate();
+    showSpeechBubble();
+    call_confetti();
+
+    console.log('Thanks for supporting us!');
+});
+
 supporter.addEventListener('click', () => {
     vibrate();
     showSpeechBubble();
+    call_confetti();
+
     console.log('Thanks for supporting us!');
+});
+
+supporterTexture.addEventListener('touchstart', () => {
+    supporterTexture.src='src/bunny_closed_eyes.png';
 });
 
 
@@ -22,10 +36,18 @@ supporter.addEventListener('touchstart', () => {
     supporterTexture.src='src/bunny_closed_eyes.png';
 });
 
-supporter.addEventListener('touchend', () => {
+supporterTexture.addEventListener('touchend', () => {
     setTimeout(() => {
         supporterTexture.src='src/bunny_open_eyes.png';
         call_confetti();
+
+    }, 500);
+});
+
+
+supporter.addEventListener('touchend', () => {
+    setTimeout(() => {
+        supporterTexture.src='src/bunny_open_eyes.png';
 
     }, 500);
 });
@@ -101,6 +123,7 @@ function call_confetti_klee() {
         startVelocity: 30,
         particleCount: 50,
         scalar: 15,
+        zIndex: 1000,
         "fullScreen": {
             "zIndex": 1
           },
