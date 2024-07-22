@@ -22,7 +22,7 @@ supporter.addEventListener('touchend', () => {
 let vibratecounter = 1;
 
 function vibrate() {
-    if (navigator.vibrate) {
+    if (!navigator.vibrate) {
         return;
     }
     vibratecounter++;
