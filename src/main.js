@@ -8,6 +8,7 @@ supporter.addEventListener('click', () => {
     console.log('Thanks for supporting us!');
 });
 
+
 supporter.addEventListener('touchstart', () => {
     supporterTexture.src='src/bunny_closed_eyes.png';
 });
