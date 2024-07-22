@@ -89,7 +89,7 @@ img {
     transition: 0.3s;
     /* no pointer events */
     pointer-events: none;
-    font-size: 34pt;
+    font-size: 42pt;
     text-align: center;
     font-family: "Patrick Hand", cursive;
     font-weight: 400;
